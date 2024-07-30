@@ -30,7 +30,7 @@ class GmailNator(Mail):
     def get_email(self):
         return self.set_email(self.get_email_online())
 
-    def get_email_online(self, use_custom_domain=True, use_plus=True, use_point=True):
+    def get_email_online(self, use_custom_domain=False, use_plus=True, use_point=True):
         """
         Random email address from the site.
 
@@ -50,7 +50,7 @@ class GmailNator(Mail):
             }
         )
         r = self._s.post(
-            "https://emailnator.com/generate-email",
+            "https://www.emailnator.com/generate-email",
             headers={**headers, "x-xsrf-token": self.__get_xsrf_token()},
             data=payload,
         )
