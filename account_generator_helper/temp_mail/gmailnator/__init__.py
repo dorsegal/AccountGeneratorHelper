@@ -67,7 +67,7 @@ class GmailNator(Mail):
     def get_inbox(self):
         payload = json.dumps({"email": self._email})
         r = self._s.post(
-            "https://emailnator.com/message-list",
+            "https://www.emailnator.com/message-list",
             headers={**headers, "x-xsrf-token": self.__get_xsrf_token()},
             data=payload,
         )
